@@ -1,3 +1,4 @@
+// Import the 'Navbar' and 'Nav' components from the 'react-bootstrap' library
 import { Navbar, Nav } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
