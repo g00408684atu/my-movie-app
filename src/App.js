@@ -7,6 +7,10 @@ import './App.css';
 import Content from './Components/content'
 import Footer from './Components/footer';
 import Header from './Components/header';
+import Read from './Components/read';
+import Movies from './Components/movies';
+import Movieitem from './Components/movieitem';
+import Create from './Components/create';
 import NavigationBar from './Components/navigationbar';
 function App() {
   return (
@@ -17,8 +21,10 @@ function App() {
       <Header></Header>
       <Routes>
         <Route path="/home" element={<Content />} />
-        <Route path="/read" element={<h1>Read Component</h1>} />
-        <Route path="/create" element={<h1>Create Component</h1>} />
+        <Route path="/read" element={<Read />} />
+        <Route path="/movies" element={<Movies />} />
+        <Route path="/movieitem" element={<Movieitem />} />
+        <Route path="/create" element={<Create />} />
       </Routes>
       <Footer></Footer>
       </div>
