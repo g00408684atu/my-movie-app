@@ -2,7 +2,7 @@ import Movies from './movies';
 const Read = ()=>{
 
     const data = [
-        
+        //array of movie objects containing title, year, imdbID, type and poster property
             {
               "Title": "Avengers: Infinity War",
               "Year": "2018",

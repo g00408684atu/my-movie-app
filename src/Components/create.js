@@ -1,3 +1,4 @@
+// defined a component and named "create"
 const Create = ()=>{
     return(
         <div>
