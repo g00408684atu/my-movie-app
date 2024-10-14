@@ -1,35 +1,26 @@
+import { useEffect, useState } from 'react';
 import Movies from './movies';
-const Read = ()=>{
+import axios from 'axios';
 
-    const data = [
-        //array of movie objects containing title, year, imdbID, type and poster property
-            {
-              "Title": "Avengers: Infinity War",
-              "Year": "2018",
-              "imdbID": "tt4154756",
-              "Type": "movie",
-              "Poster": "https://m.media-amazon.com/images/M/MV5BMjMxNjY2MDU1OV5BMl5BanBnXkFtZTgwNzY1MTUwNTM@._V1_SX300.jpg"
-            },
-            {
-              "Title": "Captain America: Civil War",
-              "Year": "2016",
-              "imdbID": "tt3498820",
-              "Type": "movie",
-              "Poster": "https://m.media-amazon.com/images/M/MV5BMjQ0MTgyNjAxMV5BMl5BanBnXkFtZTgwNjUzMDkyODE@._V1_SX300.jpg"
-            },
-            {
-              "Title": "World War Z",
-              "Year": "2013",
-              "imdbID": "tt0816711",
-              "Type": "movie",
-              "Poster": "https://m.media-amazon.com/images/M/MV5BNDQ4YzFmNzktMmM5ZC00MDZjLTk1OTktNDE2ODE4YjM2MjJjXkEyXkFqcGdeQXVyNTA4NzY1MzY@._V1_SX300.jpg"
-            }
-          
-    ]
+const Read = ()=>{
+    const [movies, setMovies] = useState([]);
+
+useEffect(
+  ()=>{
+    axios.get('https://jsonblob.com/api/jsonblob/1287718524221775872')
+    .then((response) => {
+      console.log(response.data.movies);
+      setMovies(response.data.movies);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+}, []);
+
     return(
         <div className="text-center">
             <h1>This is my read component!</h1>
-            <Movies MyMovies={data}/>
+            <Movies MyMovies={movies}/>
         </div>
     );
 }
