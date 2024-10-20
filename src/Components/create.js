@@ -24,7 +24,7 @@ function Create() {
             // Update the title/year/poster state when the input value changes
             onChange={(e) => { setTitle(e.target.value) }}
           />
-        </div>
+        </div> 
 
         <div className="form-group">
           <label>Add Movie Year: </label>
